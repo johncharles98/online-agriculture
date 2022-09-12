@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel = "preconnect" href = "https://fonts.gstatic.com">
+    <link href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel = "stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel = "preconnect" href = "https://fonts.gstatic.com">
+    <link rel = "preconnect" href = "https://fonts.gstatic.com">
+    <link href = "https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel = "stylesheet">
+    <title>Ergolution</title>
+</head>
+<body>
+    <section class="login" id="login">
+        <div class="container" id="container">
+            <div class="form-container sign-up-container">
+                    <h1 class="main-text">Create Account</h1>
+                    <div class="social">
+                        <i class='bx bxl-facebook apps'></i>
+                        <i class='bx bxl-google apps'></i>
+                        <i class='bx bxl-linkedin apps' ></i>
+                    </div>
+                    <a href="#" class="use-email">or use your email for registration</a>
+                    <form method="POST" action="/signup">
+                        <div class="creds">
+                            <div class="field">
+                              <div class="underline"></div>
+                              <!-- <i class='bx bxs-user login-icon'></i>Username -->
+                              <input type="text" name="name" placeholder="Username">
+                            </div>
+                            <div class="field">
+                                <div class="underline"></div>
+                               <!-- <i class='bx bxs-envelope login-icon'></i>Password -->
+                               <input type="email" name="email" placeholder="Email">
+                            </div>
+                            <div class="field">
+                              <div class="underline"></div>
+                             <!-- <i class='bx bxs-lock login-icon' ></i>Confirm Password -->
+                             <input type="password" name="password" placeholder="Confirm Password"> 
+                            </div>
+                        </div>
+                        <!-- <p class="warning"><%= message %>hello</p> -->
+                        <div class="after-sign-up-btn">
+                          <input type="submit" value="Sign Up" name="Create User">
+                        </div>
+                    </form>
+            </div>
+            <div class="form-container sign-in-container">
+                    <h1 class="main-text">Ergolution</h1>
+                    <div class="social">
+                        <i class='bx bxl-facebook apps'></i>
+                        <i class='bx bxl-google apps'></i>
+                        <i class='bx bxl-linkedin apps' ></i>
+                    </div>
+                    <a href="#" class="use-email">or use your email account</a>
+                    <form action="/signin" method="POST">
+                       
+                        <div class="creds">
+                            <div class="field">
+                              <div class="underline"></div>
+                              <!-- <i class='bx bxs-user login-icon'></i>Username -->
+                              <input type="text" placeholder="Email" name="email" >
+                            </div>
+                            <div class="field">
+                              <div class="underline"></div>
+                              <!-- <i class='bx bxs-lock login-icon' ></i>Password -->
+                              <input type="password" placeholder="Password" name="password">
+                            </div>
+                        </div>
+                        <!-- <a href="#" class="forget-pass">Forgot password?</a> -->
+                        <p class="warning"><%= message %></p>
+                        <div class="sign-in-btn">
+                          <input type="submit" value="Sign in">
+                        </div>
+                    </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <img src="" class="after-logo" onclick="home()" alt="">
+                        <h1>Welcome Back!</h1>
+                        <h3>To keep connected with us please <br> login with your personal info</h3>
+                        <button class="after-sign-in-btn" id="signIn">Sign In</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <img src="" class="login-logo" onclick="home()" alt="">
+                        <h1>Welcome Back!</h1>
+                        <h3>To keep connected with us please <br> login with your personal info</h3>
+                        <button class="sign-up-btn" id="signUp">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggle(){
+  var blur = document.getElementById('blur');
+  blur.classList.toggle('active');
+  var login = document.getElementById('login');
+  login.classList.toggle('active')
+}   
+
+const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+});
+    </script>
+</body>
+</html>

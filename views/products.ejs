@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="./images/apple-icon.png" type="image/png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+  <link rel="stylesheet" href="/css/common.css" />
+  <title>Ergolution</title>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  
+  <nav class="nav">
+    <div class="wrapper container">
+      <div class="logo"><a href="">
+        <img src="/./images/logo.png" alt="">
+      </a>
+      </div>
+      <ul class="nav-list">
+        <div class="top">
+          <label for="" class="btn close-btn"><i class="fas fa-times"></i></label>
+        </div>
+        <li><a href="/home">Home</a></li>
+        <li class="icons">
+          <a href="/cart">
+            <span>
+            <img src="/./images/shoppingBag.svg" alt="" />
+            <small class="count d-flex"><%= count %></small>
+          </span>
+          </a>
+          <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
+        </li>
+      </ul>
+      <label for="" class="btn open-btn"><i class="fas fa-bars"></i></label>
+    </div>
+  </nav>
+
+  <!-- PRODUCTS -->
+
+  <section class="section products">
+    <div class="products-layout container">
+      <div class="col-3">
+        <div class="product-layout">
+
+          <% products.forEach(product => {  %>
+              <div class="product">
+                <form action="/additem/<%= product._id %>" method="POST">
+                <div class="img-container">
+                  <img src="/./uploads/<%= product.image %>" alt="" />
+                  <div class="addCart">
+                   <button type="submit">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                  </div>
+                </div>
+                <div class="bottom">
+                  <a href="/productdetail/<%= product.id %>"><%= product.name %></a>
+                  <div class="price">
+                    <span>₹<%= product.price %></span>
+                  </div>
+                </div>
+              </form>
+              </div>
+            <% }) %>   
+
+
+        </div>
+ 
+      </div>
+    </div>
+  </section>
+  
+ <!-- Footer -->
+ <footer id="footer" class="section footer">
+  <div class="container">
+    <div class="footer-container">
+      <h3>Made With love by Ergolution</h3>
+    </div>
+  </div>
+  </div>
+</footer>
+<!-- End Footer -->
+
+  <!-- Custom Scripts -->
+  <script src="./js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+  <link rel="stylesheet" href="css/common.css" />
+  <title>Ergolution</title>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  
+  <nav class="nav">
+    <div class="wrapper container">
+      <div class="logo"><a href="/admin">
+        <img src="./images/logo.png" alt="">
+      </a>
+      </div>
+      <ul class="nav-list">
+        <div class="top">
+          <label for="" class="btn close-btn"><i class="fas fa-times"></i></label>
+        </div>
+        <li><a href="/addproduct">Add Products</a></li>
+        <li>
+            <a href="" class="desktop-item"><%= username %></a>
+            <label for="showdrop1" class="mobile-item"></label>
+            <ul class="drop-menu1">
+              <li><a href="/logout">Logout   <span><i class="fas fa-sign-out-alt"></i></span></a></li>
+            </ul>
+          </li>
+      </ul>
+      <label for="" class="btn open-btn"><i class="fas fa-bars"></i></label>
+    </div>
+  </nav>
+
+  <!-- PRODUCTS -->
+
+  <section class="section products">
+    <div class="products-layout container">
+      <div class="col-3">
+        <div class="product-layout">
+
+          <% products.forEach(product => {  %>
+              <div class="product">
+                <div class="img-container">
+                  <img src="./uploads/<%= product.image %>" alt="" />
+                  <div class="addCart">
+                    <a href="/edititem/<%= product._id %>">
+                        <i class="fas fa-pencil-alt"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="bottom">
+                  <a><%= product.name %></a>
+                  <div class="price">
+                    <span>₹<%= product.price %></span>
+                  </div>
+                </div>
+              </div>
+            <% }) %>   
+        </div>
+
+        <!-- PAGINATION -->
+        <ul class="pagination">
+          <span>1</span>
+          <span>2</span>
+          <span class="icon">››</span>
+          <span class="last">Last »</span>
+        </ul>
+        
+      </div>
+    </div>
+  </section>
+  
+ <!-- Footer -->
+ <footer id="footer" class="section footer">
+  <div class="container">
+    <div class="footer-container">
+      <h3>Made With love by Ergolution</h3>
+    </div>
+  </div>
+  </div>
+</footer>
+<!-- End Footer -->
+
+  <!-- Custom Scripts -->
+  <script src="./js/index.js"></script>
+</body>
+
+</html>

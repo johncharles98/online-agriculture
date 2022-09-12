@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+  <!-- Custom StyleSheet -->
+  <link rel="stylesheet" href="/css/common.css" />
+  <title>Ergolution</title>
+</head>
+
+<body>
+ 
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="wrapper container">
+      <div class="logo"><a href="">
+        <img src="/./images/logo.png" alt="">
+      </a>
+      </div>
+      <ul class="nav-list">
+        <div class="top">
+          <label for="" class="btn close-btn"><i class="fas fa-times"></i></label>
+        </div>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/products">Products</a></li>
+        <!-- icons -->
+        <li class="icons">
+          <a href="/cart">
+            <span>
+            <img src="/./images/shoppingBag.svg" alt="" />
+            <small class="count d-flex"><%= count %></small>
+          </span>
+          </a>
+          <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
+        </li>
+      </ul>
+      <label for="" class="btn open-btn"><i class="fas fa-bars"></i></label>
+    </div>
+  </nav>
+
+  <!-- Product Details -->
+  <section class="section product-detail">
+    <div class="details container">
+      <div class="left">
+        <div class="main">
+          <img src="/uploads/<%= products.image %>" alt="" />
+        </div>
+      </div>
+      <div class="right">
+        <h1><%= products.name %></h1>
+        <div class="price-name">
+          <div class="price">₹<%= products.price %></div>
+          <p class="price">Seller: <%= products.seller %></p>
+        </div> 
+        <form class="form" action="/additem/<%= products._id %>" method="POST">
+          <!-- <input type="text" placeholder="1" /> -->
+     
+            <button type="button" onclick="decrement(event)" href="">-</button>
+            <input type="text" class="number"  name="quantity" value="1"  min="1" ></input>
+            <button type="button" onclick="increment(event)" href="">+</button>
+    
+          <button type="submit" class="addCart">Add To Cart</button>
+        </form>
+        <h3>Product Detail</h3>
+        <p>
+          <%= products.description %>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Products -->
+
+  <section class="section related-products">
+    <div class="title">
+      <h2>Related Products</h2>
+      <span>Select from the premium product brands and save plenty money</span>
+    </div>
+    <div class="product-layout container">
+      <%  related_products.forEach(product => {  %>
+        <div class="product">
+          <form action="/additem/<%= product._id %>" method="POST">
+          <div class="img-container">
+            <img src="/uploads/<%= product.image %>" alt="" />
+            <div class="addCart">
+              <button type="submit">
+              <i class="fas fa-shopping-cart"></i>
+            </button>
+            </div>
+          </div>
+          <div class="bottom">
+            <a href="/productdetail"><%= product.name %></a>
+            <div class="price">
+              <span>₹<%= product.price %></span>
+            </div>
+          </div>
+        </form>
+        </div>
+      <% }) %>   
+    </div>
+  </section>
+
+ <!-- Footer -->
+ <footer id="footer" class="section footer">
+  <div class="container">
+    <div class="footer-container">
+      <h3>Made With love by Ergolution</h3>
+    </div>
+  </div>
+  </div>
+</footer>
+<!-- End Footer -->
+
+  <!-- Custom Scripts -->
+  <script src="./js/index.js"></script>
+  <script src="/js/product.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/css/adminadd.css" />
+    <link rel="stylesheet" href="/css/common.css" />
+    <title>Ergolution</title>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="wrapper container">
+        <div class="logo"><a href="/admin">
+          <img src="/./images/logo.png" alt="">
+        </a>
+        </div>
+        <ul class="nav-list">
+          <div class="top">
+            <label for="" class="btn close-btn"><i class="fas fa-times"></i></label>
+          </div>
+          <li><a href="/admin">Dashboard</a></li>
+          <li>
+              <a href="" class="desktop-item"><%= username %></a>
+              <label for="showdrop1" class="mobile-item"></label>
+              <ul class="drop-menu1">
+                <li><a href="">Logout  <span><i class="fas fa-sign-out-alt"></i></span></a></li>
+              </ul>
+            </li>
+        </ul>
+        <label for="" class="btn open-btn"><i class="fas fa-bars"></i></label>
+      </div>
+    </nav>
+
+    <div class="admin-title container">Update In <span class="red">List</span></div>
+
+    <section class="input container width">
+      <img src="/./uploads/<%= product.image %>" alt="" />
+      <form action="/update/<%= product._id %>" method="POST">
+        <div class="two">
+          <label>Product Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            value="<%= product.name %>"
+          />
+        </div>
+        <div class="two">
+          <label>Price</label>
+          <input
+            type="text"
+            name="price"
+            id="price"
+            value="<%= product.price %>"
+          />
+        </div>
+        <button type="submit" class="button">Update</button>
+        <!-- <form action="/delproduct/<%= product._id %>" method="post"> -->
+          <a href="/delproduct/<%= product._id %>" class="button" >remove</a>
+        <!-- </form> -->
+      </form>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <!-- Custom StyleSheet -->
+    <link rel="stylesheet" href="css/common.css" />
+    <title>Ergolution</title>
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="wrapper container">
+        <div class="logo"><a href="">
+          <img src="./images/logo.png" alt="">
+        </a>
+        </div>
+        <ul class="nav-list">
+          <div class="top">
+            <label for="" class="btn close-btn"><i class="fas fa-times"></i></label>
+          </div>
+          <li><a href="/home">Home</a></li>
+          <li><a href="/products">Products</a></li>
+          <!-- icons -->
+          <li class="icons">
+            <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
+          </li>
+        </ul>
+        <label for="" class="btn open-btn"><i class="fas fa-bars"></i></label>
+      </div>
+    </nav>
+
+    <!-- Cart Items -->
+    <div class="container cart">
+      <h1 class="cart-user">Welcome  <%= name %>! </h1>
+      <p class="cart-subtitle">Verify your items and proceed to checkout</p>
+      <table>
+        <tr>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Subtotal</th>
+        </tr>
+        <% orders.forEach(order => {  %>
+        <tr>
+          <td>
+            <div class="cart-info">
+              <img src="./uploads/<%= order.image %>" alt="" />
+              <div>
+                <p class="order-name"><%= order.name %></p>
+                <span>Price: <%= order.price %></span>
+                <br />
+                <form action="/delete/<%= order._id %>" method="post">
+                <button type="submit" class="remove">remove</button>
+                </form>
+              </div>
+            </div>
+          </td>
+          <td><%= order.qty %></td>
+          <td><%= order.qty * order.price %></td>
+        </tr>
+        <% }) %>  
+      </table>
+
+      <div class="total-price">
+        <table>
+          <tr>
+            <td>Subtotal</td>
+            <td>₹<%= subtotal %></td>
+          </tr>
+          <tr>
+            <td>Service Charge</td>
+            <td>₹<%= tax %></td>
+          </tr>
+          <tr>
+            <td>Total</td>
+            <td>₹<%= total %></td>
+          </tr>
+        </table>
+        <a href="#" class="checkout btn">Proceed To Checkout</a>
+      </div>
+    </div>
+
+     <!-- Footer -->
+     <footer id="footer" class="section footer">
+      <div class="container">
+        <div class="footer-container">
+          <h3>Made With love by Ergolution</h3>
+        </div>
+      </div>
+      </div>
+    </footer>
+  <!-- End Footer -->
+
+    <!-- Custom Scripts -->
+    <script src="./js/index.js"></script>
+  </body>
+</html>

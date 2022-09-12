@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.7.5/swiper-bundle.min.css"
+    />
+  <link href='https://unpkg.com/boxicons@2.0.8/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="css/common.css" />
+  <title>Ergolution</title>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="wrapper container">
+      <div class="logo"><a href="">
+        <img src="./images/logo.png" alt="">
+      </a>
+      </div>
+      <ul class="nav-list">
+        <div class="top">
+          <label for="" class="btn close-btn"><i class="fas fa-times"></i></label>
+        </div>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/products">Products</a></li>
+        <!-- icons -->
+        <li class="icons">
+          <a href="/cart">
+          <span>
+            <img src="./images/shoppingBag.svg" alt="" />
+            <small class="count d-flex"><%= count %></small>
+          </span>
+          </a>
+          <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
+        </li>
+      </ul>
+      <label for="" class="btn open-btn"><i class="fas fa-bars"></i></label>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="row">
+      <div class="swiper-container slider-1">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./images/hero-1.png" alt="" />
+            <div class="content">
+              <h1>Bambi Print Mini Backpack
+                <br/>
+                start from 
+                <span>₹150</span>
+              </h1>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti ad natus facilis magni corporis alias.</p>
+
+              <a href="#">Shop Now</a>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="./images/hero-2.png" alt="hero image" />
+            <div class="content">
+              <h1>You first Order
+                <br/>
+                <span>20% off</span>
+                at Pencil
+              </h1>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti ad natus facilis magni corporis alias.</p>
+              <a href="#">Shop Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carousel Navigation -->
+    <div class="arrows d-flex">
+        <div class="swiper-prev d-flex">
+          <i class="bx bx-chevrons-left swiper-icon"></i>
+        </div>
+        <div class="swiper-next d-flex">
+          <i class="bx bx-chevrons-right swiper-icon"></i>
+        </div>
+    </div>
+  </div>
+
+  <!-- Promotion -->
+
+  <section class="section promotion">
+    <div class="title">
+      <h2>Shop Collections</h2>
+      <span>Select from the premium product and save plenty money</span>
+    </div>
+
+    <div class="promotion-layout container">
+      <div class="promotion-item">
+        <img src="./images/utility.png" alt="" />
+        <div class="promotion-content">
+          <h3>UTILITY</h3>
+          <a href="/products/Utility">SHOP NOW</a>
+        </div>
+      </div>
+   
+
+      <div class="promotion-item">
+        <img src="./images/kits.jpg" alt="" />
+        <div class="promotion-content">
+          <h3>GIFTING KITS</h3>
+          <a href="/products/Gifting">SHOP NOW</a>
+        </div>
+      </div>
+
+      <div class="promotion-item">
+        <img src="./images/stationary.png" alt="" />
+        <div class="promotion-content">
+          <h3>STATIONARY</h3>
+          <a href="/products/Stationary">SHOP NOW</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured -->
+  <section class="section featured">
+    <div class="title">
+      <h2>Featured Products</h2>
+      <span>Select from the premium product brands and save plenty money</span>
+    </div>
+
+    <div class="row container">
+      <div class="swiper-container slider-2">
+        <div class="swiper-wrapper">
+          <% features.forEach(feature => {  %>
+          <div class="swiper-slide">
+            <div class="product">
+              <form action="/additem/<%= feature._id %>" method="POST">
+              <div class="img-container">
+                <img src="./uploads/<%= feature.image %>" alt="" />
+                <div class="addCart">
+                <button type="submit">
+                  <i class="fas fa-shopping-cart"></i>
+                </button>
+                </div>
+              </div>
+              <div class="bottom">
+                <a href="/productdetail/<%= feature.id %>"><%= feature.name %></a>
+                <div class="price">
+                  <span>₹<%= feature.price %></span>
+                </div>
+              </div>
+            </form>
+            </div>
+          </div>
+          <% }) %>   
+        </div>
+      </div>
+    </div>
+
+     <!-- Carousel Navigation -->
+    <div class="arrows d-flex">
+       <div class="custom-next d-flex">
+          <i class="bx bx-chevrons-right swiper-icon"></i>
+        </div>
+        <div class="custom-prev d-flex">
+          <i class="bx bx-chevrons-left swiper-icon"></i>
+        </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="section products">
+    <div class="title">
+      <h2>New Products</h2>
+      <span>Select from the premium product brands and save plenty money</span>
+    </div>
+
+    <div class="product-layout">
+      <% latests.forEach(latest => {  %>
+          <div class="product">
+            <form action="/additem/<%= latest.id %>" method="POST">
+            <div class="img-container">
+              <img src="./uploads/<%= latest.image %>" alt="" />
+              <div class="addCart">
+                <button type="submit">
+                <i class="fas fa-shopping-cart"></i>
+              </button>
+              </div>
+            </div>
+            <div class="bottom">
+              <a href="/productdetail/<%= latest._id %>"><%= latest.name %></a>
+              <div class="price">
+                <span>₹<%= latest.price %></span>
+              </div>
+            </div>
+          </form>
+          </div>
+        <% }) %>   
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer" class="section footer">
+    <div class="container">
+      <div class="footer-container">
+        <h3>Made With love by Ergolution</h3>
+      </div>
+    </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <!-- ======== SwiperJS ======= -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.7.5/swiper-bundle.min.js"></script>
+  <!-- Custom Scripts -->
+  <script src="./js/slider.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+
+</html>
+
