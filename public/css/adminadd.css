@@ -1,4 +1,3 @@
-
 /* * {
     margin: 0;
     padding: 0;
@@ -22,43 +21,39 @@ a{
     cursor: pointer;
 } */
 
-
-
-:focus{
-    outline: none;
+:focus {
+  outline: none;
 }
 
-.containers{
-    margin: 4rem 6rem;
-    max-width: 100%;
+.containers {
+  margin: 4rem 6rem;
+  max-width: 100%;
 }
-
 
 /* ------------------admin-title------------------ */
 
-.admin-title{
-    font-family: 'Oswald', sans-serif;
-    margin-top: 100px !important;
-    font-size: 4rem;
-    font-weight: 700;
-    padding-bottom: 20px;
+.admin-title {
+  font-family: "Oswald", sans-serif;
+  margin-top: 100px !important;
+  font-size: 4rem;
+  font-weight: 700;
+  padding-bottom: 20px;
 }
 
-.red{
-    color: #69ae14;
+.red {
+  color: #69ae14;
 }
-
 
 /* ------------input------------------ */
-.width{
-    width: 80%;
-   margin: 4rem auto;
-   display: flex;
-   justify-content: center;
+.width {
+  width: 80%;
+  margin: 4rem auto;
+  display: flex;
+  justify-content: center;
 }
 
-form{
-    width: 80%;
+form {
+  width: 80%;
 }
 
 /* img{
@@ -67,56 +62,52 @@ form{
     margin: auto 5rem;
 } */
 
-
-.two{
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-    font-size: 2rem;
-    color: black;
+.two {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  font-size: 2rem;
+  color: black;
 }
 
-input{
-    border: none;
-    background-color: white;
-    border-bottom: 2px solid black;
-    padding: 1.5rem 1.5rem 1.5rem 0.5rem;
-    font-size: 1.5rem;
+input {
+  border: none;
+  background-color: white;
+  border-bottom: 2px solid black;
+  padding: 1.5rem 1.5rem 1.5rem 0.5rem;
+  font-size: 1.5rem;
 }
 
-.drop{
-    margin-top: 1rem;
-    height: 4rem;
-    font-size: 1.5rem;
-    color: black;
-    background-color: #fff;
-    outline: none;
-    border: none;
-    border-bottom: 2px solid black;
+.drop {
+  margin-top: 1rem;
+  height: 4rem;
+  font-size: 1.5rem;
+  color: black;
+  background-color: #fff;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid black;
 }
-
-
 
 /* -------------button--------------- */
 
-
-.button{
-    justify-content: center;
-    font-size: 2rem;
-    padding: 1rem 2.5rem;
-    margin-left: 2rem;
-    margin-top: 3rem;
-    cursor: pointer;
-    color: #fff;
-    background-color: #69ae14;
-    border: #69ae14 3px solid;
-    border-radius: 4rem;
-    transition: ease-in 0.35s;
+.button {
+  justify-content: center;
+  font-size: 2rem;
+  padding: 1rem 2.5rem;
+  margin-left: 2rem;
+  margin-top: 3rem;
+  cursor: pointer;
+  color: #fff;
+  background-color: #69ae14;
+  border: #69ae14 3px solid;
+  border-radius: 4rem;
+  transition: ease-in 0.35s;
 }
 
-button:hover{
-    color: #69ae14;
-    border: #69ae14 3px solid;
-    background-color: #fff;
-    transform: translateY(-0.5rem);
+button:hover {
+  color: #69ae14;
+  border: #69ae14 3px solid;
+  background-color: #fff;
+  transform: translateY(-0.5rem);
 }
