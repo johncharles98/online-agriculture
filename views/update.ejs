@@ -24,28 +24,37 @@
     <!-- Navigation -->
     <nav class="nav">
       <div class="wrapper container">
-        <div class="logo"><a href="/admin">
-          <img src="/./images/logo.png" alt="">
-        </a>
+        <div class="logo">
+          <a href="/admin">
+            <img src="/./images/logo.png" alt="" />
+          </a>
         </div>
         <ul class="nav-list">
           <div class="top">
-            <label for="" class="btn close-btn"><i class="fas fa-times"></i></label>
+            <label for="" class="btn close-btn"
+              ><i class="fas fa-times"></i
+            ></label>
           </div>
           <li><a href="/admin">Dashboard</a></li>
           <li>
-              <a href="" class="desktop-item"><%= username %></a>
-              <label for="showdrop1" class="mobile-item"></label>
-              <ul class="drop-menu1">
-                <li><a href="">Logout  <span><i class="fas fa-sign-out-alt"></i></span></a></li>
-              </ul>
-            </li>
+            <a href="" class="desktop-item"><%= username %></a>
+            <label for="showdrop1" class="mobile-item"></label>
+            <ul class="drop-menu1">
+              <li>
+                <a href=""
+                  >Logout <span><i class="fas fa-sign-out-alt"></i></span
+                ></a>
+              </li>
+            </ul>
+          </li>
         </ul>
         <label for="" class="btn open-btn"><i class="fas fa-bars"></i></label>
       </div>
     </nav>
 
-    <div class="admin-title container">Update In <span class="red">List</span></div>
+    <div class="admin-title container">
+      Update In <span class="red">List</span>
+    </div>
 
     <section class="input container width">
       <img src="/./uploads/<%= product.image %>" alt="" />
@@ -70,7 +79,7 @@
         </div>
         <button type="submit" class="button">Update</button>
         <!-- <form action="/delproduct/<%= product._id %>" method="post"> -->
-          <a href="/delproduct/<%= product._id %>" class="button" >remove</a>
+        <a href="/delproduct/<%= product._id %>" class="button">remove</a>
         <!-- </form> -->
       </form>
     </section>

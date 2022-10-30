@@ -1,77 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-    <link rel="stylesheet" href="css/adminadd.css">
-    <link rel="stylesheet" href="css/common.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/adminadd.css" />
+    <link rel="stylesheet" href="css/common.css" />
     <title>Ergolution</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <!-- Navigation -->
     <nav class="nav">
       <div class="wrapper container">
-        <div class="logo"><a href="/admin">
-          <img src="./images/logo.png" alt="">
-        </a>
+        <div class="logo">
+          <a href="/admin">
+            <img src="./images/logo.png" alt="" />
+          </a>
         </div>
         <ul class="nav-list">
           <div class="top">
-            <label for="" class="btn close-btn"><i class="fas fa-times"></i></label>
+            <label for="" class="btn close-btn"
+              ><i class="fas fa-times"></i
+            ></label>
           </div>
           <li><a href="/admin">Dashboard</a></li>
           <li>
-              <a href="" class="desktop-item"><%= username %></a>
-              <label for="showdrop1" class="mobile-item"></label>
-              <ul class="drop-menu1">
-                <li><a href="">Logout   <span><i class="fas fa-sign-out-alt"></i></span></a></li>
-              </ul>
-            </li>
+            <a href="" class="desktop-item"><%= username %></a>
+            <label for="showdrop1" class="mobile-item"></label>
+            <ul class="drop-menu1">
+              <li>
+                <a href=""
+                  >Logout <span><i class="fas fa-sign-out-alt"></i></span
+                ></a>
+              </li>
+            </ul>
+          </li>
         </ul>
         <label for="" class="btn open-btn"><i class="fas fa-bars"></i></label>
       </div>
     </nav>
-    
 
-    <div class="admin-title containers">Add In <span class="red">List</span></div>
-
+    <div class="admin-title containers">
+      Add In <span class="red">List</span>
+    </div>
 
     <section class="inputwidth containers">
-        <form action="/add" method="POST" enctype="multipart/form-data">
-            <div class="two">
-                <label>Product Name</label>
-                <input type="text" name="name" id="name" required class="">
-            </div>
-            <div class="two">
-                <label>Price</label>
-                <input type="text" name="price" id="price" required class="">
-            </div>
-            <div class="two">
-                <label for="types" >Choose a type:</label>
-                 <select id="type" name="type" class="drop">
-                 <option value="Utility">Utility</option>
-                 <option value="Gifting">Gifting</option>
-                 <option value="Stationary">Stationary</option>
-                </select>
-            </div>
-            <div class="two">
-                <label>Image</label>
-                <input type="file" required class="btn-img text " name="image" id="image" value="Upload">
-            </div>
-            <div class="two">
-                <label>Description</label>
-                <input type="text" name="desc" id="desc" required class="">
-            </div>
-            <button type="submit" class="button">Submit</button>
-        </form>
+      <form action="/add" method="POST" enctype="multipart/form-data">
+        <div class="two">
+          <label>Product Name</label>
+          <input type="text" name="name" id="name" required class="" />
+        </div>
+        <div class="two">
+          <label>Price</label>
+          <input type="text" name="price" id="price" required class="" />
+        </div>
+        <div class="two">
+          <label for="types">Choose a type:</label>
+          <select id="type" name="type" class="drop">
+            <option value="Utility">Utility</option>
+            <option value="Gifting">Gifting</option>
+            <option value="Stationary">Stationary</option>
+          </select>
+        </div>
+        <div class="two">
+          <label>Image</label>
+          <input
+            type="file"
+            required
+            class="btn-img text"
+            name="image"
+            id="image"
+            value="Upload"
+          />
+        </div>
+        <div class="two">
+          <label>Description</label>
+          <input type="text" name="desc" id="desc" required class="" />
+        </div>
+        <button type="submit" class="button">Submit</button>
+      </form>
     </section>
 
     <script src="./js/index.js"></script>
-</body>
+  </body>
 </html>
